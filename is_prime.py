@@ -1,5 +1,7 @@
 #primeFunction.py
+#algorithm copied from programiz.com (for the sake of using this project purely to learn github)
 
+#a functions for determining whether a number is prime
 def isPrime(num: int) -> bool:
     if num == 1:
         return False
@@ -23,4 +25,5 @@ def isPrime(num: int) -> bool:
         print(num,"is not a prime number")
 
 
-print(isPrime(29))
+#adding another comment
+
