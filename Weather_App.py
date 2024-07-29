@@ -1,10 +1,10 @@
 #Weather_App.py
-#pulls data from a webstire to provide temp and humidity for a user-provided city
+#pulls data from a website to provide temp and humidity for a user-provided city
 
 class Weather:
     def fetchData(url, location):
         """fetch data using the url to the weather website"""
-    def fetchCity(cityName, stateName, countryName):
+    def fetchCity(cityName, stateName,countryName):
         """gets the user provided city, state, and country names and puts
         it into a usable format"""
     def returnData():
@@ -18,3 +18,19 @@ class Weather:
         and puts it into a format that can be returned to and read by the user"""
         weatherString=returnData()
         print(weatherString)
+
+class Temperature(Weather):
+    def returnData():
+        """this finds the current temperature listed for the location given
+        and returns it as a string"""
+    def dataFormatted(data):  
+              """this gets the string of temperature data and prints it out in a user-friendly format"""
+    
+
+class Humidity(Weather):
+    def returnData():
+        """this finds the current humidity listed for the location given
+        and returns it as a string"""
+    def dataFormatted(data):
+         """this gets the string of humidity data and prints it out in a user-friendly format"""
+    
