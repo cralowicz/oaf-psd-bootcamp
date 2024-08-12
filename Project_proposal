@@ -1,0 +1,14 @@
+For my project, I am interested in creating a program that will use an API to get up-to-date currency exchange rates in order to 
+perform some calculations for the user in regards to making donations via a certain donation platform (gofundme).
+The program will have the user input how much they want the fundee to receive in their currency, what currency they use and what currency the recipient will receive,
+and then will calculate the fees taken by the platform (2.9% +$.30(usd) per donation), add it to the desired amount to be received, and convert all currency as necessary.
+The output will tell how much the user needs to donate (in the recipient's currency)in order for the fundee to get the full amount of how much the user originally intended 
+to donate as well as how much in the user's currency that will amount to.
+
+If this is not a satisfactory idea, I am interested in how to make a job search scouring program. I would prefer to make the donation calculator at this moment, though.
+
+-sidenote:  I apologize for not getting the practice api assignment in yet, I have been having a lot of physical health problems that make working at a computer 
+very difficult. I am still planning on getting it in.
+
+Thank you!
+
