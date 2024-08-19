@@ -4,6 +4,16 @@ in order for the recipient to receive the full amount intended. Also to convert
 between currency as needed
  """
 
+
+
+
+
+
+
+"""
+Main
+"""
+
 #gofundme fees, 2.9% + $.30usd
 feePercentage=.029
 flatFeeAddOn=.3 #will need to convert this when converting currency
