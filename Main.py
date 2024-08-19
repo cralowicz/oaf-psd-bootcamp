@@ -7,7 +7,12 @@ between currency as needed
 
 
 
-
+"""
+Mock Data Handler Class in case API not working
+"""
+def MockData(country)->float:
+    print("API not connected")
+    return .50
 
 
 """
