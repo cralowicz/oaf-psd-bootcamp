@@ -10,7 +10,7 @@ between currency as needed
 """
 Mock Data Handler Class in case API not working
 """
-def MockData(country)->float:
+def MockData(country)->float: #NEED TO MAKE THIS ABSTRACT; FACTORY PATTERN!!!!!
     print("API not connected")
     return .50
 
