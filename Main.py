@@ -20,11 +20,12 @@ class AbstractCurrencyService(ABC):
     """barebones of the api calling class and the backup data class"""
     @abstractmethod
     def populateCSV():
-        #smth smth smth
-        pass
+       """create and/or update the csv"""
+    pass
+    @abstractmethod
     def compareDateTime():
-        #to see if it is time to call api again
-        #compare current datetime (utc) with api's "time of next update" (utc)
+        """to see if it is time to call api again
+        #compare current datetime (utc) with api's "time of next update" (utc)"""
         pass
 
 class APIService(AbstractCurrencyService):
@@ -44,7 +45,7 @@ Mock Data Handler Class in case API not working
 class MockDataService(AbstractCurrencyService):
     #will need to overwrite csv every time
     def populateCSV():
-        #overwrite csv to input TEST:0.5
+        #overwrite csv to just contain TEST:0.5
           #smth smth smth
         print("API not connected")
         pass
@@ -76,17 +77,11 @@ converting=input()
 #if yes
 if(converting == "Y" or converting =="y"):
     #so far im only doing USD as the donator currency
-        #print("Please type in the abbreviation of the currency in which you use")
-        #print("eg. USD, GBP, IQD, etc")
-        #userCurrency=input()
+   
     print("Please type in the abbreviation of the currency in which the donation will be received")
     donationCurrency=input()
     amountIntended=input("How much do you want the fundee to receive in their currency: ")
-    ##this might be better to do in oop so it is easier to mix and match conversions instead of making
-    #infinite if statements
-    #or an api?? idk if possible
     floatIntended=float(amountIntended)
-    #convert here
     lowerCaseCurrency=donationCurrency.lower()
 
     """
