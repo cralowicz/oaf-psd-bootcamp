@@ -3,18 +3,65 @@ a gofundme donation caluclator to figure out what you should donate
 in order for the recipient to receive the full amount intended. Also to convert 
 between currency as needed
  """
+from abc import ABC
+from datetime import datetime
+from enum import Enum
+#class of api calling
+#class for mock data service
+#class for data handler (contain csv, check if needs updating to call api, update db, then query db) 
+
+"""???????"""
+class ENVIRONMENT(Enum):
+    PRODUCTION=1
+    DEV=2
 
 
+class AbstractCurrencyService(ABC):
+    """barebones of the api calling class and the backup data class"""
+    @abstractmethod
+    def populateCSV():
+        #smth smth smth
+        pass
+    def compareDateTime():
+        #to see if it is time to call api again
+        #compare current datetime (utc) with api's "time of next update" (utc)
+        pass
 
+class APIService(AbstractCurrencyService):
+    url='https://open.er-api.com/v6/latest/USD'
+    #will need to overwrite csv every time 
+    def populateCSV():
+         #smth smth smth
+        pass
+    def compareDateTime():
+        #to see if it is time to call api again
+        #compare current datetime (utc) with api's "time of next update" (utc)
+        pass
 
 """
 Mock Data Handler Class in case API not working
 """
-def MockData(country)->float: #NEED TO MAKE THIS ABSTRACT; FACTORY PATTERN!!!!!
-    print("API not connected")
-    return .50
+class MockDataService(AbstractCurrencyService):
+    #will need to overwrite csv every time
+    def populateCSV():
+        #overwrite csv to input TEST:0.5
+          #smth smth smth
+        print("API not connected")
+        pass
 
 
+##OK I think this is if you are having someone log in
+#ok change this to build the environment based on the code
+#returned from the API
+class ServiceFactory():
+    def buildService(name:ENVIRONMENT)->AbstractCurrencyService:
+        if(name==ENVIRONMENT.DEV):
+            return MockDataService()
+        elif (name==ENVIRONMENT.PRODUCTION):
+            return APIService()
+        else:
+            return "unspecified name"
+    
 """
 Main
 """
