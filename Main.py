@@ -10,10 +10,7 @@ from enum import Enum
 #class for mock data service
 #class for data handler (contain csv, check if needs updating to call api, update db, then query db) 
 
-"""???????"""
-class ENVIRONMENT(Enum):
-    PRODUCTION=1
-    DEV=2
+
 
 
 class AbstractCurrencyService(ABC):
@@ -51,9 +48,14 @@ class MockDataService(AbstractCurrencyService):
         pass
 
 
-##OK I think this is if you are having someone log in
+##I took this from the eg but I think this is if you are having someone log in
 #ok change this to build the environment based on the code
 #returned from the API
+"""???????"""
+class ENVIRONMENT(Enum):
+    PRODUCTION=1
+    DEV=2
+
 class ServiceFactory():
     def buildService(name:ENVIRONMENT)->AbstractCurrencyService:
         if(name==ENVIRONMENT.DEV):
@@ -66,12 +68,9 @@ class ServiceFactory():
 """
 Main
 """
-
 #gofundme fees, 2.9% + $.30usd
 feePercentage=.029
 flatFeeAddOn=.3 #will need to convert this when converting currency
-#amountIntended
-#floatIntended
 print("Converting between any currencies? Y or N")
 converting=input()
 #if yes
