@@ -27,10 +27,12 @@ insert_query="""INSERT INTO rates (currency, rate)
 #values=[("USD", 1),("GBP", 1.3)]
 #cur.executemany('INSERT INTO rates VALUES (?, ?)', values)
 #con.commit()
-
+update_q="""UPDATE rates SET rate = ? WHERE currency = ?"""
+#cur.execute(update_q,(2,"USD"))
+#con.commit()
 res=cur.execute("SELECT * FROM rates")
 print(res.fetchall())
 res=cur.execute("SELECT rate FROM rates WHERE currency = 'USD'")
-print(res.fetchall())
+#print(res.fetchall())
 # 
 con.close()
