@@ -18,3 +18,5 @@ Data Storage:
 Data Utilization:
 
   Call the database to be able to find the currency abbreviation needed and get the exchange rate in order to convert currency as necessary.
+
+Use Main.py to run the program.
