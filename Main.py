@@ -77,7 +77,7 @@ class APIService(AbstractCurrencyService):
             return response
         
     def updateDatetimes(update_data):
-        with open('C:\\Users\\ckral\\oaf-psd-bootcamp\\currency.csv', 'w') as currency_csv:
+        with open('C:\\Users\\ckral\\oaf-psd-bootcamp\\update_datetime.csv', 'w') as currency_csv:
             for date in update_data.keys():
                  print(date)
                  currency_csv.write("%s,%s\n" %(date, update_data[date]))  
@@ -86,7 +86,7 @@ class APIService(AbstractCurrencyService):
 
 #non-api related funcs below
     def compareDateTime()->bool:
-        with open('C:\\Users\\ckral\\oaf-psd-bootcamp\\currency.csv',mode='r') as file:
+        with open('C:\\Users\\ckral\\oaf-psd-bootcamp\\update_datetime.csv',mode='r') as file:
             csvFile=csv.reader(file)
             for lines in csvFile:
                 l=lines[0]
